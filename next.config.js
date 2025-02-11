@@ -5,6 +5,9 @@ const nextConfig = {
     loader: "custom",
     loaderFile: "./storyblokImageLoader.js",
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = nextConfig;

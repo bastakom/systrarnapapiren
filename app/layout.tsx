@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     "Din sommarkrog i Mölle med hamnens största uteservering direkt mot havet och solnedgången. ",
 };
 
-const cachedFetch = (input: any, init?: any): Promise<Response> => {
+/* const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
     ...init,
     cache: "no-store",
   });
-};
+}; */
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
