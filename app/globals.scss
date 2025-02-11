@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/futura-std-4");
+@import url("https://use.typekit.net/xfw2wxw.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$bg: #3d52a0;
+$small-grey: #8597c4;
+$lighther-blue: #adbbda;
+$text-color: #ede8f5;
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Miller display", serif;
+}
+
+button,
+p,
+a,
+span {
+  font-family: "Futura Std", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 60px;
+  text-align: center;
+}
+h2 {
+  font-size: 32px;
+  line-height: 60px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+.contact {
+  div,
+  a {
+    font-size: 18px;
+  }
+
+  a {
+    font-weight: 700;
+  }
+}
+
+p {
+  font-size: 18px;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.rendered-content {
+  color: $text-color;
+  p {
+    font-size: 28px;
+    line-height: 35px;
+  }
+}
+
+.text-color {
+  color: $text-color;
+}
+
+.notActive {
+  color: $bg;
+  background-color: $lighther-blue;
+}
+
+.active {
+  color: $text-color;
+  background-color: $bg;
+}
+
+nav {
+  li {
+    font-size: 16px;
+  }
+}
+
+.render-content {
+  display: flex;
+  flex-direction: column;
+  color: #121212;
+  gap: 10px;
+
+  ul {
+    list-style: circle;
+
+    padding: 0;
+    margin: 0;
+    li {
+      margin: 0px 0px 5px 20px;
+    }
+  }
+}
+
+.hero-content {
+  a {
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    color: white;
+  }
+}
+
+.footer-content {
+  p {
+    span {
+      color: white !important;
+    }
+  }
+}
+
+.image-banner-content {
+  p {
+    font-size: 16px;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.adress,
+.phone-number {
+  margin: 0px 8px;
+}
+
+.separator {
+  margin: 0 4px;
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .separator {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 45px;
+  }
+
+  .header {
+    background-color: rgba(255, 255, 255, 0.68);
+  }
+
+  .image-banner-content {
+    p {
+      font-size: 22px;
+    }
+  }
+  h2 {
+    font-size: 45px;
+    line-height: 60px;
+    text-align: center;
+  }
+
+  .contact {
+    div,
+    a {
+      font-size: 26px;
+    }
+
+    a {
+      font-weight: 700;
+    }
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
