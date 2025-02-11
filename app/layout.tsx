@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     "Din sommarkrog i Mölle med hamnens största uteservering direkt mot havet och solnedgången. ",
 };
 
-const cachedFetch = (input: any, init?: any): Promise<Response> => {
+const cachedFetch = (input: any, init?: any): any => {
   return fetch(input, {
     ...init,
-    cache: process.env.NODE_ENV === "development" && "no-store",
+    cache: "no-store",
   });
 };
 
