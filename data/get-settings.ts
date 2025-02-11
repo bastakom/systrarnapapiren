@@ -8,15 +8,12 @@ export async function getSettings() {
   };
 
   const client = getStoryblokApi();
-  try {
-    const data = await client.get(`cdn/stories/settings`, sbParams);
 
-    if (!data) {
-      throw new Error("Not Found");
-    }
+  const data = await client.get(`cdn/stories/settings`, sbParams);
 
-    return { data };
-  } catch (error: any) {
-    throw error;
+  if (!data) {
+    throw new Error("Not Found");
   }
+
+  return { data };
 }

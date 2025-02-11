@@ -8,15 +8,12 @@ export async function getData(slug: string) {
   };
 
   const client = getStoryblokApi();
-  try {
-    const data = await client.get(`cdn/stories/${slug}`, sbParams);
 
-    if (!data) {
-      throw new Error("Not Found");
-    }
+  const data = await client.get(`cdn/stories/${slug}`, sbParams);
 
-    return { data };
-  } catch (error: any) {
-    throw error;
+  if (!data) {
+    throw new Error("Not Found");
   }
+
+  return { data };
 }
