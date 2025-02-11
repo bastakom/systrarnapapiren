@@ -9,6 +9,10 @@ interface HeroSectionProps {
     booking_link: {
       cached_url: string;
     };
+
+    video: {
+      filename: string;
+    };
     menu_link_title: string;
     menu_link: {
       cached_url: string;
@@ -33,24 +37,21 @@ export const HeroSection = ({ blok }: HeroSectionProps) => {
 
   return (
     <div
-      className="hero-content h-[100vh] lg:h-[110vh] flex"
+      className="hero-content h-[100vh] lg:h-[100vh] flex"
       {...storyblokEditable}
     >
-      <div className="absolute top-0 h-[120%] lg:h-[110vh] overflow-hidden w-full bg-[#3d52a0] opacity-20  z-10 " />
+      <div className="absolute top-0 h-[120%] lg:h-[100vh] overflow-hidden w-full bg-[#3d52a0] opacity-20  z-10 " />
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full object-cover h-[120%] lg:h-[110vh]"
+        className="absolute top-0 left-0 w-full object-cover h-[120%] lg:h-[100vh]"
       >
-        <source
-          src="https://systrarnapapiren.se/wp-content/uploads/2024/05/systrana.mp4"
-          type="video/mp4"
-        />
+        <source src={blok.video.filename} type="video/mp4" />
       </video>
-      <div className="container flex flex-col items-center justify-center gap-4 z-20">
-        <div className="w-[65%] lg:w-[35%] h-[25%] lg:h-[35%] relative z-30 mb-4 mt-20 lg:mt-20">
+      <div className="container flex flex-col items-center justify-center gap-4 z-20 lg:h-[100%]">
+        <div className="w-[65%] lg:w-[35%] h-[25%] lg:h-[35%] relative z-30 mb-4 mt-20 lg:mt-0">
           <Image
             src={logo.filename}
             fill
