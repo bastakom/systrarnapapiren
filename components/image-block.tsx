@@ -27,7 +27,7 @@ export const ImageBlock = ({ blok }: ImageBlockProps) => {
     setOpen(!open);
   };
 
-  const isCategoryMatch = blok.category.includes(category);
+  const isCategoryMatch = blok?.category?.includes(category);
 
   return (
     <>
