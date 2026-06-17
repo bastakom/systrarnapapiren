@@ -27,11 +27,11 @@ export const ImageBanner = ({ blok }: ImageBannerProps) => {
     ? blok.category.join(", ")
     : blok.category || "";
 
-  const hasCategory = categoryString.trim() !== "";
+  const isMenuCategory = categoryString.toLowerCase().trim() === "meny";
 
-  const buttonUrl = hasCategory
-    ? ""
-    : link?.url || link?.cached_url || "";
+  const buttonUrl = !isMenuCategory
+    ? link?.url || link?.cached_url || ""
+    : "";
 
   const handleOnClick = () => {
     setOpen(!open);
@@ -60,7 +60,14 @@ export const ImageBanner = ({ blok }: ImageBannerProps) => {
             {content ? render(content) : null}
           </div>
 
-          {buttonUrl ? (
+          {isMenuCategory ? (
+            <button
+              className="mt-4 px-6 py-2 bg-[#569fd4] text-[20px] text-white rounded hover:bg-white hover:text-black"
+              onClick={handleOnClick}
+            >
+              {button_title}
+            </button>
+          ) : buttonUrl ? (
             <a
               href={buttonUrl}
               target="_blank"
@@ -72,7 +79,7 @@ export const ImageBanner = ({ blok }: ImageBannerProps) => {
           ) : (
             <button
               className="mt-4 px-6 py-2 bg-[#569fd4] text-[20px] text-white rounded hover:bg-white hover:text-black"
-              onClick={handleOnClick}
+              type="button"
             >
               {button_title}
             </button>
