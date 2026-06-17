@@ -23,16 +23,15 @@ export const ImageBanner = ({ blok }: ImageBannerProps) => {
   const { title, image, content, button_title, link } = blok;
   const { open, setOpen, setCategory } = useStore();
 
-  const isMenuBlock = title === "Meny";
-
-  // Endast använda länk om det INTE är menyblocket
-  const buttonUrl = !isMenuBlock
-    ? link?.url || link?.cached_url || ""
-    : "";
-
   const categoryString = Array.isArray(blok.category)
     ? blok.category.join(", ")
     : blok.category || "";
+
+  const hasCategory = categoryString.trim() !== "";
+
+  const buttonUrl = hasCategory
+    ? ""
+    : link?.url || link?.cached_url || "";
 
   const handleOnClick = () => {
     setOpen(!open);
@@ -52,7 +51,7 @@ export const ImageBanner = ({ blok }: ImageBannerProps) => {
         )}
 
         <div
-          id={!isMenuBlock ? "menu" : undefined}
+          id={title !== "Meny" ? "menu" : undefined}
           className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center text-white gap-4 lg:gap-8 p-4 bg-black bg-opacity-40"
         >
           <h2 className="font-bold">{title}</h2>
